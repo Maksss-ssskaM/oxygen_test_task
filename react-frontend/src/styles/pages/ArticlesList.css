@@ -1,0 +1,53 @@
+.articles-container {
+    margin: 20px;
+}
+
+.articles-user-info {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.articles-logout-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+}
+
+.articles-filter {
+    margin-bottom: 20px;
+}
+
+.articles-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.articles-item-title {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.articles-item-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.articles-error {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.articles-loading {
+    text-align: center;
+    margin-top: 20px;
+}
