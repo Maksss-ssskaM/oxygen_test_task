@@ -5,6 +5,7 @@ import { fetcher } from "../utils/fetcher";
 import { AuthForm } from "../components/AuthForm";
 import { useAuth } from "../hooks/authHooks";
 import '../styles/pages/ArticlesList.css';
+import {RegisterForm} from "../components/RegisterForm";
 
 export function ArticlesListPage() {
     const { user, logout } = useAuth();
@@ -28,7 +29,10 @@ export function ArticlesListPage() {
                     <button className="articles-logout-button" onClick={logout}>Выйти</button>
                 </div>
             ) : (
-                <AuthForm />
+                <>
+                    <AuthForm />
+                    <RegisterForm />
+                </>
             )}
             {user && (
                 <div className="articles-filter">
