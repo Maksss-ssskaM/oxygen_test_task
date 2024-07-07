@@ -3,7 +3,7 @@ import axios from "axios";
 import { useAuth } from "../hooks/authHooks";
 import '../styles/components/AuthForm.css';
 
-export const AuthForm = () => {
+export const LoginForm = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [authError, setAuthError] = useState("");

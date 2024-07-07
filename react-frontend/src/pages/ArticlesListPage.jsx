@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useSWR from "swr";
 import { Link } from "react-router-dom";
 import { fetcher } from "../utils/fetcher";
-import { AuthForm } from "../components/AuthForm";
+import { LoginForm } from "../components/LoginForm";
 import { useAuth } from "../hooks/authHooks";
 import '../styles/pages/ArticlesList.css';
 import {RegisterForm} from "../components/RegisterForm";
@@ -10,6 +10,7 @@ import {RegisterForm} from "../components/RegisterForm";
 export function ArticlesListPage() {
     const { user, logout } = useAuth();
     const [showAuthorArticles, setShowAuthorArticles] = useState(false);
+    const [isRegistering, setIsRegistering] = useState(false)
 
     const userIdParam = user && showAuthorArticles ? `?authorId=${user.id}` : '';
     const { data, error } = useSWR(`${process.env.REACT_APP_BACKEND_BASE_URL}/articles${userIdParam}`, fetcher);
@@ -29,10 +30,12 @@ export function ArticlesListPage() {
                     <button className="articles-logout-button" onClick={logout}>Выйти</button>
                 </div>
             ) : (
-                <>
-                    <AuthForm />
-                    <RegisterForm />
-                </>
+                <div className="auth-container">
+                    {isRegistering ? <RegisterForm/> : <LoginForm />}
+                    <button className="change-form-button" onClick={() => setIsRegistering(!isRegistering)}>
+                        {isRegistering ? "Уже есть аккаунт? Войти" : "Нет аккаунта? Зарегистрироваться"}
+                    </button>
+                </div>
             )}
             {user && (
                 <div className="articles-filter">

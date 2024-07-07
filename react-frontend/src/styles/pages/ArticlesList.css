@@ -19,6 +19,18 @@
     font-size: 16px;
 }
 
+.change-form-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.change-form-button:hover {
+    color: #007bff;
+}
+
 .articles-filter {
     margin-bottom: 20px;
 }
@@ -28,6 +40,7 @@
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
+    max-width: 1000px;
 }
 
 .articles-item-title {
